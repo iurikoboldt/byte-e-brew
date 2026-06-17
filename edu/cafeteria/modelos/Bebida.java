@@ -1,6 +1,7 @@
 package modelos;
+import servico.IPromocional; 
 
-public class Bebida extends Produto {
+public class Bebida extends Produto implements IPromocional {
 
     private String tamanho;
     private String temperaturaDaBebida;
@@ -11,6 +12,11 @@ public class Bebida extends Produto {
         this.tamanho = tamanho;
         this.temperaturaDaBebida = temperaturaDaBebida;
         this.doseDeCafeina = doseDeCafeina;
+    }
+
+    @Override
+    public void aplicarPromocao() {
+        
     }
 
     

@@ -1,4 +1,5 @@
 package modelos;
+import servico.IPromocional;
 
 
 public class Produto {

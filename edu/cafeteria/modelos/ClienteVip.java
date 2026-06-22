@@ -1,10 +1,18 @@
-package modelos;
+package br.edu.cafeteria.modelo;
 
+public class ClienteVIP extends Cliente{
+    public static final int XP_POR_REAL = 10 ;
 
-public class ClienteVip extends Cliente {
+    public ClienteVIP(String nome, String cpf){
+        super(nome, cpf);
+    }
+    @Override
+    public int calcularXP(double valorCompra){
+        return (int) valorCompra * 2;
+    }
 
-    public ClienteVip(int cpf, boolean clienteVip, double dinheiroGasto, int experiencia) {
-        super(cpf, clienteVip, dinheiroGasto, experiencia);
-    } 
-
+    public boolean XPsuficiente(double valorCompra){
+        int xpNecessario = (int) (valorCompra * XP_POR_REAL);
+        return getXp() >= xpNecessario;
+    }
 }

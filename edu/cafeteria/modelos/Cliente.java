@@ -1,27 +1,35 @@
-package modelos;
+package br.edu.cafeteria.modelo;
 
+public abstract class Cliente {
+    private String nome;
+    private String cpf;
+    private double xp;
 
-public class Cliente {
-    
-        boolean clienteVip;
-        int experiencia;
-        double dinheiroGasto;
-        int cpf;
-    
-        public Cliente(int cpf, boolean clienteVip, double dinheiroGasto, int experiencia) {
-            this.cpf = cpf;
-            this.clienteVip = clienteVip;
-            this.dinheiroGasto = dinheiroGasto;
-            this.experiencia = experiencia;
-        }
-    
-        public void conversaoDeExperiencia(double dinheiroGasto, int experiencia) {
-            experiencia += dinheiroGasto;
-        }        
-        
-        public double getExperiencia(){
-            return experiencia;
-        }
-
-
+    public Cliente(String nome, String cpf){
+        this.nome = nome;
+        this.cpf = cpf;
+        this.xp = 0.0;
     }
+
+    public abstract int calcularXP(double valorCompra);
+
+    public void adicionarXP(double valorCompra){
+        this.xp += calcularXP(valorCompra);
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public double getXp() {
+        return xp;
+    }
+
+    public String getNome(){
+        return nome;
+    }
+
+    protected void removerXP(int quantidade){
+        xp -= quantidade;
+    }
+}

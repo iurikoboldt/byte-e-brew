@@ -1,24 +1,20 @@
-package modelos;
-import servico.IPromocional; 
-
-public class Bebida extends Produto implements IPromocional {
+package br.edu.cafeteria.modelo;
+public class Bebida extends Produto{
 
     private String tamanho;
-    private String temperaturaDaBebida;
-    private double doseDeCafeina;
+    private double cafeinaMg;
 
-    public Bebida(String nome, int preco, String tamanho, String temperaturaDaBebida, double doseDeCafeina) {
-        super(nome, preco);
+    public Bebida(String codigo, String nome, double precoBase, int estoque, String tamanho, double cafeinaMg){
+        super(codigo, nome, precoBase, estoque);
         this.tamanho = tamanho;
-        this.temperaturaDaBebida = temperaturaDaBebida;
-        this.doseDeCafeina = doseDeCafeina;
+        this.cafeinaMg = cafeinaMg;
+
+    }
+    public String getTamanho() {
+        return tamanho;
     }
 
-    @Override
-    public void aplicarPromocao() {
-        
+    public double getCafeinaMg() {
+        return cafeinaMg;
     }
-
-    
-
 }

@@ -1,9 +1,10 @@
-package br.edu.cafeteria.modelo;
+package modelos;
+import java.util.ArrayList;
 
 public abstract class Cliente {
     private String nome;
     private String cpf;
-    private double xp;
+    protected double xp;
 
     public Cliente(String nome, String cpf){
         this.nome = nome;
@@ -16,6 +17,19 @@ public abstract class Cliente {
     public void adicionarXP(double valorCompra){
         this.xp += calcularXP(valorCompra);
     }
+
+    public static boolean validarCPF(String cpf) {
+        if (cpf.length() != 11) {
+            return false;
+        }
+        for (int i = 0; i < cpf.length(); i++) {
+            if (!Character.isDigit(cpf.charAt(i))) {
+                return false;
+            }
+        }
+
+        return true;
+    } 
 
     public String getCpf() {
         return cpf;

@@ -1,0 +1,12 @@
+package excecao;
+
+public class CpfInvalidoException extends Exception {
+    
+    public CpfInvalidoException() {
+        super("CPF inválido; tente novamente");
+    }
+
+    public CpfInvalidoException(String mensagem) {
+        super(mensagem);
+    }
+}

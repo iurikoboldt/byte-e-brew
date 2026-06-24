@@ -1,5 +1,8 @@
-package br.edu.cafeteria.modelo;
-public class Bebida extends Produto{
+package modelos;
+
+import servico.IPromocional;
+
+public class Bebida extends Produto implements IPromocional{
 
     private String tamanho;
     private double cafeinaMg;
@@ -16,5 +19,10 @@ public class Bebida extends Produto{
 
     public double getCafeinaMg() {
         return cafeinaMg;
+    }
+
+    @Override
+    public void aplicarPromocao() {
+
     }
 }

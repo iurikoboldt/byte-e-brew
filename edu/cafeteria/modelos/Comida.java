@@ -1,5 +1,8 @@
-package br.edu.cafeteria.modelo;
-public class Comida extends Produto {
+package modelos;
+
+import servico.IPromocional;
+
+public class Comida extends Produto implements IPromocional {
 
     private int tempoPreparo;
     private boolean vegano;
@@ -22,6 +25,11 @@ public class Comida extends Produto {
 
     public boolean isSemGluten() {
         return semGluten;
+    }
+
+    @Override
+    public void aplicarPromocao() {
+
     }
 }
 

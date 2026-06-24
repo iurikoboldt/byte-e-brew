@@ -1,7 +1,7 @@
-package br.edu.cafeteria.modelo;
+package modelos;
 
 public class ClienteStandard extends Cliente {
-
+    
     public ClienteStandard(String nome, String cpf){
 
         super(nome, cpf);

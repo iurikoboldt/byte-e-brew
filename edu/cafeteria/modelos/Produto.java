@@ -1,4 +1,4 @@
-package br.edu.cafeteria.modelo;
+package modelos;
 public abstract class Produto {
 
     private String codigo;
@@ -18,12 +18,12 @@ public abstract class Produto {
     }
 
     public void reduzirEstoque(int quantidade) {
-        if (quantidade > estoque) {
+        if (quantidade <= estoque) {
             estoque -= quantidade;
         }
     }
     public void aumentarEstoque(int quantidade){
-        estoque -= quantidade;
+        estoque += quantidade;
     }
     public double getPrecoBase(){
         return precoBase;
@@ -39,13 +39,6 @@ public abstract class Produto {
     public String getCodigo (){
         return codigo;
     }
-
-    public void setNome(String nome){
-        this.nome = nome;
-    }
-
-    public void setPrecoBase(double precoBase){
-        this.precoBase = precoBase;
-    }
 }
+
 

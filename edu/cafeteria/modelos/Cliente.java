@@ -1,10 +1,13 @@
 package modelos;
 import java.util.ArrayList;
+import servico.Banco;
+
 
 public abstract class Cliente {
     private String nome;
     private String cpf;
     protected double xp;
+    Banco<Cliente> clientes;
 
     public Cliente(String nome, String cpf){
         this.nome = nome;

@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.edu.cafeteria.modelos.Produto;
+import br.edu.cafeteria.modelo.Produto;
 
 public class Pedido {
     private static final String FILE = "data/codigo.txt";

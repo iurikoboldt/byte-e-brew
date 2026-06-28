@@ -1,4 +1,4 @@
-package excecao;
+package br.edu.cafeteria.excecao;
 
 public class EstoqueInsuficienteException extends Exception {
 

@@ -1,10 +1,14 @@
-package modelos;
+package br.edu.cafeteria.modelos;
 
 public class ClienteVip extends Cliente{
     public static final int XP_POR_REAL = 10 ;
 
-    public ClienteVip(String nome, String cpf){
-        super(nome, cpf);
+    public ClienteVip(String nome, String cpf) {
+        this(nome, cpf, 0.0);
+    }
+
+    public ClienteVip(String nome, String cpf, double xp) {
+        super(nome, cpf, xp);
     }
     @Override
     public int calcularXP(double valorCompra){

@@ -1,8 +1,6 @@
-package modelos;
+package br.edu.cafeteria.modelos;
 
-import servico.IPromocional;
-
-public class Comida extends Produto implements IPromocional {
+public class Comida extends Produto {
 
     private int tempoPreparo;
     private boolean vegano;

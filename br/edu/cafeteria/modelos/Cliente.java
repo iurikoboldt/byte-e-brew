@@ -1,18 +1,30 @@
-package modelos;
-import java.util.ArrayList;
-import servico.Banco;
+package br.edu.cafeteria.modelos;
 
+import java.io.Serializable;
 
-public abstract class Cliente {
+public abstract class Cliente implements Serializable {
+    private static final long serialVersionUID = 1L;
     private String nome;
     private String cpf;
     protected double xp;
-    Banco<Cliente> clientes;
 
-    public Cliente(String nome, String cpf){
+    public Cliente(String nome, String cpf) {
+        this(nome, cpf, 0.0);
+    }
+
+    protected Cliente(String nome, String cpf, double xp) {
         this.nome = nome;
         this.cpf = cpf;
-        this.xp = 0.0;
+        this.xp = xp;
+    }
+    
+    public static Cliente definirFidelidade(String nome, String cpf){
+        int numero = (int)(Math.random()*100);
+        if (numero > 90) {
+            return new ClienteVip(nome, cpf);
+        } else {
+            return new ClienteStandard(nome, cpf);
+        }
     }
 
     public abstract int calcularXP(double valorCompra);
@@ -30,7 +42,6 @@ public abstract class Cliente {
                 return false;
             }
         }
-
         return true;
     } 
 

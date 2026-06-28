@@ -1,4 +1,5 @@
-package modelos;
+package br.edu.cafeteria.modelos;
+
 public abstract class Produto {
 
     private String codigo;
@@ -33,11 +34,17 @@ public abstract class Produto {
         return nome;
     }
     public int getEstoque(){
-
         return estoque;
     }
     public String getCodigo (){
         return codigo;
+    }
+    
+    public void aplicarPromocao() {
+    }
+
+    public Produto getProduto() {
+        return this;
     }
 }
 

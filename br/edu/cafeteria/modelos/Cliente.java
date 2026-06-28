@@ -57,6 +57,7 @@ public abstract class Cliente implements Serializable {
         return nome;
     }
 
+
     public void removerXP(int quantidade){
         xp -= quantidade;
     }

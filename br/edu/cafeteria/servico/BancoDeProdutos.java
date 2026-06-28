@@ -1,6 +1,6 @@
 package br.edu.cafeteria.servico;
 
-import br.edu.cafeteria.modelos.Produto;
+import br.edu.cafeteria.modelo.Produto;
 import java.util.ArrayList;
 import java.util.List;
 

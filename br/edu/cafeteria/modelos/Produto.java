@@ -1,4 +1,4 @@
-package br.edu.cafeteria.modelos;
+package br.edu.cafeteria.modelo;
 
 public abstract class Produto {
 
@@ -39,7 +39,7 @@ public abstract class Produto {
     public String getCodigo (){
         return codigo;
     }
-    
+
     public void aplicarPromocao() {
     }
 
@@ -47,5 +47,3 @@ public abstract class Produto {
         return this;
     }
 }
-
-

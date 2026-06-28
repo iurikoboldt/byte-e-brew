@@ -1,4 +1,4 @@
-package br.edu.cafeteria.modelos;
+package br.edu.cafeteria.modelo;
 
 import java.io.Serializable;
 
@@ -17,11 +17,11 @@ public abstract class Cliente implements Serializable {
         this.cpf = cpf;
         this.xp = xp;
     }
-    
+
     public static Cliente definirFidelidade(String nome, String cpf){
         int numero = (int)(Math.random()*100);
-        if (numero > 90) {
-            return new ClienteVip(nome, cpf);
+        if (numero > 10) {
+            return new ClienteVIP(nome, cpf);
         } else {
             return new ClienteStandard(nome, cpf);
         }
@@ -43,7 +43,7 @@ public abstract class Cliente implements Serializable {
             }
         }
         return true;
-    } 
+    }
 
     public String getCpf() {
         return cpf;
@@ -57,7 +57,7 @@ public abstract class Cliente implements Serializable {
         return nome;
     }
 
-    protected void removerXP(int quantidade){
+    public void removerXP(int quantidade){
         xp -= quantidade;
     }
 }

@@ -1,5 +1,4 @@
-package br.edu.cafeteria.modelos;
-
+package br.edu.cafeteria.modelo;
 public class Comida extends Produto {
 
     private int tempoPreparo;
@@ -24,10 +23,10 @@ public class Comida extends Produto {
     public boolean isSemGluten() {
         return semGluten;
     }
-
     @Override
-    public void aplicarPromocao() {
-
+    public String toString() {
+        return String.format("[%s] %s - R$ %.2f | %d min | Vegano: %s | S/ Glúten: %s (Estoque: %d)",
+                getCodigo(), getNome(), getPrecoBase(), tempoPreparo, vegano?"Sim":"Não", semGluten?"Sim":"Não", getEstoque());
     }
 }
 

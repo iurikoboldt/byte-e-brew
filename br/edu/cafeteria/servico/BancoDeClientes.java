@@ -7,9 +7,9 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.edu.cafeteria.modelos.Cliente;
-import br.edu.cafeteria.modelos.ClienteStandard;
-import br.edu.cafeteria.modelos.ClienteVip;
+import br.edu.cafeteria.modelo.Cliente;
+import br.edu.cafeteria.modelo.ClienteStandard;
+import br.edu.cafeteria.modelo.ClienteVIP;
 
 public class BancoDeClientes implements Banco<Cliente> {
 
@@ -59,7 +59,7 @@ public class BancoDeClientes implements Banco<Cliente> {
         }
 
         boolean removido = clientes.removeIf(
-            c -> c.getCpf().equals(cliente.getCpf())
+                c -> c.getCpf().equals(cliente.getCpf())
         );
 
         if (removido) {
@@ -96,10 +96,10 @@ public class BancoDeClientes implements Banco<Cliente> {
 
         for (Cliente cliente : clientes) {
             System.out.println(
-                "Nome: " + cliente.getNome() +
-                " | CPF: " + cliente.getCpf() +
-                " | XP: " + cliente.getXp() +
-                " | Tipo: " + cliente.getClass().getSimpleName()
+                    "Nome: " + cliente.getNome() +
+                            " | CPF: " + cliente.getCpf() +
+                            " | XP: " + cliente.getXp() +
+                            " | Tipo: " + cliente.getClass().getSimpleName()
             );
         }
     }
@@ -133,9 +133,9 @@ public class BancoDeClientes implements Banco<Cliente> {
             json.append("]");
 
             Files.writeString(
-                caminho,
-                json.toString(),
-                StandardCharsets.UTF_8
+                    caminho,
+                    json.toString(),
+                    StandardCharsets.UTF_8
             );
 
         } catch (IOException e) {
@@ -153,15 +153,15 @@ public class BancoDeClientes implements Banco<Cliente> {
             }
 
             String conteudo = Files.readString(
-                caminho,
-                StandardCharsets.UTF_8
+                    caminho,
+                    StandardCharsets.UTF_8
             );
 
             clientes.clear();
 
             conteudo = conteudo.replace("[", "")
-                               .replace("]", "")
-                               .trim();
+                    .replace("]", "")
+                    .trim();
 
             if (conteudo.isEmpty()) {
                 return;
@@ -171,8 +171,8 @@ public class BancoDeClientes implements Banco<Cliente> {
 
             for (String obj : objetos) {
                 obj = obj.replace("{", "")
-                         .replace("}", "")
-                         .trim();
+                        .replace("}", "")
+                        .trim();
 
                 String[] campos = obj.split(",");
 
@@ -185,12 +185,12 @@ public class BancoDeClientes implements Banco<Cliente> {
                     String[] partes = campo.split(":");
 
                     String chave = partes[0]
-                        .replace("\"", "")
-                        .trim();
+                            .replace("\"", "")
+                            .trim();
 
                     String valor = partes[1]
-                        .replace("\"", "")
-                        .trim();
+                            .replace("\"", "")
+                            .trim();
 
                     switch (chave) {
                         case "tipo":
@@ -211,7 +211,7 @@ public class BancoDeClientes implements Banco<Cliente> {
                 Cliente cliente;
 
                 if (tipo.equals("ClienteVip")) {
-                    cliente = new ClienteVip(nome, cpf, xp);
+                    cliente = new ClienteVIP(nome, cpf, xp);
                 } else {
                     cliente = new ClienteStandard(nome, cpf, xp);
                 }

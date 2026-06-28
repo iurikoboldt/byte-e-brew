@@ -1,4 +1,4 @@
-package br.edu.cafeteria.modelos;
+package br.edu.cafeteria.modelo;
 
 public class ClienteStandard extends Cliente {
 
